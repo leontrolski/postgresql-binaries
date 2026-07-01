@@ -15,22 +15,23 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          # - "18.3.0"
-          # - "17.9.0"
-          # - "16.13.0"
-          # - "15.17.0"
+          # For now. We can add versions/comment things once they're published
+          - "18.3.0"
+          - "17.9.0"
+          - "16.13.0"
+          - "15.17.0"
           - "14.22.0"
         arch:
           - llvm: "aarch64-apple-darwin"
             python: "macosx_11_0_arm64"
-          # - llvm: "aarch64-unknown-linux-gnu"
-          #   python: "manylinux_2_17_aarch64"
-          # - llvm: "x86_64-apple-darwin"
-          #   python: "macosx_10_9_x86_64"
-          # - llvm: "x86_64-pc-windows-msvc"
-          #   python: "win_amd64"
-          # - llvm: "x86_64-unknown-linux-gnu"
-          #   python: "manylinux_2_17_x86_64"
+          - llvm: "aarch64-unknown-linux-gnu"
+            python: "manylinux_2_17_aarch64"
+          - llvm: "x86_64-apple-darwin"
+            python: "macosx_10_9_x86_64"
+          - llvm: "x86_64-pc-windows-msvc"
+            python: "win_amd64"
+          - llvm: "x86_64-unknown-linux-gnu"
+            python: "manylinux_2_17_x86_64"
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v7

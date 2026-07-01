@@ -1,6 +1,6 @@
 [project]
 name = "postgresql-binaries"
-version = "0.0.0.dev"
+version = "0.0.0"
 description = "PostgreSQL binaries for Linux, MacOS and Windows"
 readme = "README.md"
 authors = [
@@ -8,6 +8,9 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = []
+
+[project.urls]
+repository = "https://github.com/leontrolski/postgresql-binaries"
 
 [build-system]
 requires = ["uv_build>=0.11.7,<0.12.0"]
