@@ -1,0 +1,18 @@
+from functools import cache
+from pathlib import Path
+import tarfile
+
+LIB = Path(__file__).parent
+
+
+@cache
+def bin() -> Path:
+    archive = next(LIB.glob("postgresql-*.tar.gz"))
+    stem = archive.name[: -len(".tar.gz")]
+    if not (LIB / stem).exists():
+        with tarfile.open(archive, "r:gz") as tar:
+            tar.extractall(path=LIB, filter="data")
+
+    out = LIB / stem / "bin"
+    assert out.exists()
+    return out
