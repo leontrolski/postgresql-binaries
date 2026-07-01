@@ -3,7 +3,7 @@
 Uses releases from [theseus-rs/postgresql-binaries](https://github.com/theseus-rs/postgresql-binaries) and publishes them to pypy, so that you can do:
 
 ```shell
-pip install postgresql-binaries@18.4.0
+pip install postgresql-binaries==18.4.0
 ```
 
 Then eg.
@@ -21,4 +21,4 @@ cmd = [
 subprocess.check_call(cmd)
 ```
 
-On the first call to `bin()`, the archive baked into the wheel is unpacked.
+On the first call to `bin()`, the archive baked into the wheel is unpacked in place.
