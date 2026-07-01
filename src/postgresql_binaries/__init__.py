@@ -1,5 +1,6 @@
 from functools import cache
 from pathlib import Path
+import shutil
 import tarfile
 
 LIB = Path(__file__).parent
@@ -13,7 +14,7 @@ def bin() -> Path:
     # Clean up any previous versions
     for existing in LIB.glob("postgresql-*"):
         if existing.is_dir() and existing.name != stem:
-            existing.unlink()
+            shutil.rmtree(existing)
 
     if not (LIB / stem).exists():
         with tarfile.open(archive, "r:gz") as tar:

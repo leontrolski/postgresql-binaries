@@ -16,6 +16,6 @@ jobs:
       - uses: astral-sh/setup-uv@v7
       - run: curl -O https://github.com/theseus-rs/postgresql-binaries/releases/download/17.10.0/postgresql-17.10.0-aarch64-apple-darwin.tar.gz
       - run: mv postgresql-* src/postgresql_binaries/
-      - run: sed -i "s/0.0.0/0.0.3/g" pyproject.toml
+      - run: sed -i "s/0.0.0/0.0.4/g" pyproject.toml
       - run: uv build
       - run: uv publish
