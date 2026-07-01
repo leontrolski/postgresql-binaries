@@ -1,6 +1,6 @@
 [project]
 name = "postgresql-binaries"
-version = "0.0.0"
+version = "0.0.0.dev"
 description = "PostgreSQL binaries for Linux, MacOS and Windows"
 readme = "README.md"
 authors = [
