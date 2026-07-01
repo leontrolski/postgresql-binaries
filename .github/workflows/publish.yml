@@ -34,10 +34,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v7
-      - run: uv tool install wheel
       - run: curl -L -O https://github.com/theseus-rs/postgresql-binaries/releases/download/${{ matrix.version }}/postgresql-${{ matrix.version }}-${{ matrix.arch.llvm }}.tar.gz
       - run: mv postgresql-* src/postgresql_binaries/
       - run: sed -i "s/0.0.0/${{ matrix.version }}/g" pyproject.toml
-      - run: uv tool run wheel tags --platform-tag "${{ matrix.arch.python }}" dist/*.whl
-      - run: uv build
+      - run: uv build --wheel
+      - run: uv tool install wheel
+      - run: uv tool run wheel tags --platform-tag ${{ matrix.arch.python }} dist/*.whl
+      - run: rm dist/*-any.whl
       - run: uv publish

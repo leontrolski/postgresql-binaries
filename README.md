@@ -6,7 +6,9 @@ Uses releases from [theseus-rs/postgresql-binaries](https://github.com/theseus-r
 pip install postgresql-binaries==18.4.0
 ```
 
-Then eg.
+The package is around 11MB.
+
+Then to use, eg:
 
 ```python
 import postgresql_binaries
