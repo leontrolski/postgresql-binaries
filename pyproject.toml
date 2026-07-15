@@ -3,6 +3,7 @@ name = "postgresql-binaries"
 version = "0.0.0"
 description = "PostgreSQL binaries for Linux, MacOS and Windows"
 readme = "README.md"
+license = { file = "LICENSE" }
 authors = [
     { name = "Oli Russell", email = "mrxoliver@gmail.com" }
 ]

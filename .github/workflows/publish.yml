@@ -16,11 +16,11 @@ jobs:
       matrix:
         version:
           # For now. We can add versions/comment things once they're published
-          - "18.3.0"
-          - "17.9.0"
-          - "16.13.0"
-          - "15.17.0"
-          - "14.22.0"
+          - "18.4.0"
+          - "17.10.0"
+          - "16.14.0"
+          - "15.18.0"
+          - "14.23.0"
         arch:
           - llvm: "aarch64-apple-darwin"
             python: "macosx_11_0_arm64"
